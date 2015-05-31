@@ -14,6 +14,12 @@
 		FCF1F6861B1BB77500DDE270 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6851B1BB77500DDE270 /* Images.xcassets */; };
 		FCF1F6891B1BB77500DDE270 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6871B1BB77500DDE270 /* LaunchScreen.xib */; };
 		FCF1F6951B1BB77500DDE270 /* RibbitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F6941B1BB77500DDE270 /* RibbitTests.m */; };
+		FCF1F6A51B1BB8DE00DDE270 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F69F1B1BB8DE00DDE270 /* camera.png */; };
+		FCF1F6A61B1BB8DE00DDE270 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6A01B1BB8DE00DDE270 /* camera@2x.png */; };
+		FCF1F6A71B1BB8DE00DDE270 /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6A11B1BB8DE00DDE270 /* friends.png */; };
+		FCF1F6A81B1BB8DE00DDE270 /* friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6A21B1BB8DE00DDE270 /* friends@2x.png */; };
+		FCF1F6A91B1BB8DE00DDE270 /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6A31B1BB8DE00DDE270 /* inbox.png */; };
+		FCF1F6AA1B1BB8DE00DDE270 /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6A41B1BB8DE00DDE270 /* inbox@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,12 @@
 		FCF1F68E1B1BB77500DDE270 /* RibbitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RibbitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF1F6931B1BB77500DDE270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCF1F6941B1BB77500DDE270 /* RibbitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RibbitTests.m; sourceTree = "<group>"; };
+		FCF1F69F1B1BB8DE00DDE270 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		FCF1F6A01B1BB8DE00DDE270 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		FCF1F6A11B1BB8DE00DDE270 /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
+		FCF1F6A21B1BB8DE00DDE270 /* friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends@2x.png"; sourceTree = "<group>"; };
+		FCF1F6A31B1BB8DE00DDE270 /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
+		FCF1F6A41B1BB8DE00DDE270 /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,7 @@
 		FCF1F66C1B1BB77400DDE270 = {
 			isa = PBXGroup;
 			children = (
+				FCF1F69E1B1BB8DE00DDE270 /* Images */,
 				FCF1F6771B1BB77400DDE270 /* Ribbit */,
 				FCF1F6911B1BB77500DDE270 /* RibbitTests */,
 				FCF1F6761B1BB77400DDE270 /* Products */,
@@ -117,6 +130,20 @@
 				FCF1F6931B1BB77500DDE270 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCF1F69E1B1BB8DE00DDE270 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FCF1F69F1B1BB8DE00DDE270 /* camera.png */,
+				FCF1F6A01B1BB8DE00DDE270 /* camera@2x.png */,
+				FCF1F6A11B1BB8DE00DDE270 /* friends.png */,
+				FCF1F6A21B1BB8DE00DDE270 /* friends@2x.png */,
+				FCF1F6A31B1BB8DE00DDE270 /* inbox.png */,
+				FCF1F6A41B1BB8DE00DDE270 /* inbox@2x.png */,
+			);
+			name = Images;
+			path = tab_bar_icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +227,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF1F6841B1BB77500DDE270 /* Main.storyboard in Resources */,
+				FCF1F6A71B1BB8DE00DDE270 /* friends.png in Resources */,
+				FCF1F6A81B1BB8DE00DDE270 /* friends@2x.png in Resources */,
+				FCF1F6A61B1BB8DE00DDE270 /* camera@2x.png in Resources */,
+				FCF1F6A91B1BB8DE00DDE270 /* inbox.png in Resources */,
 				FCF1F6891B1BB77500DDE270 /* LaunchScreen.xib in Resources */,
+				FCF1F6A51B1BB8DE00DDE270 /* camera.png in Resources */,
 				FCF1F6861B1BB77500DDE270 /* Images.xcassets in Resources */,
+				FCF1F6AA1B1BB8DE00DDE270 /* inbox@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
