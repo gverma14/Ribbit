@@ -20,6 +20,7 @@
 		FCF1F6A81B1BB8DE00DDE270 /* friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6A21B1BB8DE00DDE270 /* friends@2x.png */; };
 		FCF1F6A91B1BB8DE00DDE270 /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6A31B1BB8DE00DDE270 /* inbox.png */; };
 		FCF1F6AA1B1BB8DE00DDE270 /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6A41B1BB8DE00DDE270 /* inbox@2x.png */; };
+		FCF1F6AD1B1CBF7100DDE270 /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F6AC1B1CBF7100DDE270 /* InboxTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		FCF1F6A21B1BB8DE00DDE270 /* friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends@2x.png"; sourceTree = "<group>"; };
 		FCF1F6A31B1BB8DE00DDE270 /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
 		FCF1F6A41B1BB8DE00DDE270 /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
+		FCF1F6AB1B1CBF7100DDE270 /* InboxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxTableViewController.h; path = ../InboxTableViewController.h; sourceTree = "<group>"; };
+		FCF1F6AC1B1CBF7100DDE270 /* InboxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxTableViewController.m; path = ../InboxTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 			children = (
 				FCF1F67C1B1BB77400DDE270 /* AppDelegate.h */,
 				FCF1F67D1B1BB77400DDE270 /* AppDelegate.m */,
+				FCF1F6AB1B1CBF7100DDE270 /* InboxTableViewController.h */,
+				FCF1F6AC1B1CBF7100DDE270 /* InboxTableViewController.m */,
 				FCF1F67F1B1BB77400DDE270 /* ViewController.h */,
 				FCF1F6801B1BB77500DDE270 /* ViewController.m */,
 				FCF1F6821B1BB77500DDE270 /* Main.storyboard */,
@@ -252,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF1F6AD1B1CBF7100DDE270 /* InboxTableViewController.m in Sources */,
 				FCF1F6811B1BB77500DDE270 /* ViewController.m in Sources */,
 				FCF1F67E1B1BB77400DDE270 /* AppDelegate.m in Sources */,
 				FCF1F67B1B1BB77400DDE270 /* main.m in Sources */,
