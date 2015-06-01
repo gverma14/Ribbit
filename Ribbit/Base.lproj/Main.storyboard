@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sFT-IC-7Fq" kind="relationship" relationship="viewControllers" id="exm-U1-bU6"/>
+                        <segue destination="tNf-NT-xFb" kind="relationship" relationship="viewControllers" id="exm-U1-bU6"/>
                         <segue destination="PXK-Ka-2GM" kind="relationship" relationship="viewControllers" id="C6o-s2-zIK"/>
                         <segue destination="KPg-A9-Ij4" kind="relationship" relationship="viewControllers" id="l7P-Xm-FN2"/>
                     </connections>
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1H-Vc-gpS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="-168"/>
+            <point key="canvasLocation" x="1783" y="-168"/>
         </scene>
         <!--Friends-->
         <scene sceneID="EGQ-LN-9bu">
@@ -154,7 +154,7 @@
             </objects>
             <point key="canvasLocation" x="841" y="1226"/>
         </scene>
-        <!--Inbox-->
+        <!--Inbox Table View Controller-->
         <scene sceneID="mww-mJ-LE6">
             <objects>
                 <tableViewController id="sFT-IC-7Fq" customClass="InboxTableViewController" sceneMemberID="viewController">
@@ -175,14 +175,14 @@
                             <outlet property="delegate" destination="sFT-IC-7Fq" id="8vw-HL-x7k"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Inbox" image="inbox.png" id="T1Y-69-tPH"/>
+                    <navigationItem key="navigationItem" id="8ET-Vr-p9p"/>
                     <connections>
                         <segue destination="llh-At-7MN" kind="push" identifier="showLogin" id="WNb-OS-q8E"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khj-Nv-szm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="-168"/>
+            <point key="canvasLocation" x="1373" y="-168"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pTX-ma-q9A">
@@ -238,7 +238,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ba-2v-EIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="-179"/>
+            <point key="canvasLocation" x="2177" y="-179"/>
+        </scene>
+        <!--Inbox-->
+        <scene sceneID="qc1-7A-3UJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tNf-NT-xFb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Inbox" image="inbox.png" id="T1Y-69-tPH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uIr-kh-7oq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sFT-IC-7Fq" kind="relationship" relationship="rootViewController" id="9HF-mQ-0Dl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26D-Q0-C62" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="-168"/>
         </scene>
     </scenes>
     <resources>
