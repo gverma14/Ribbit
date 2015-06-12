@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FCF1F67B1B1BB77400DDE270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F67A1B1BB77400DDE270 /* main.m */; };
 		FCF1F67E1B1BB77400DDE270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F67D1B1BB77400DDE270 /* AppDelegate.m */; };
-		FCF1F6811B1BB77500DDE270 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F6801B1BB77500DDE270 /* ViewController.m */; };
 		FCF1F6841B1BB77500DDE270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6821B1BB77500DDE270 /* Main.storyboard */; };
 		FCF1F6861B1BB77500DDE270 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6851B1BB77500DDE270 /* Images.xcassets */; };
 		FCF1F6891B1BB77500DDE270 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6871B1BB77500DDE270 /* LaunchScreen.xib */; };
@@ -23,6 +22,17 @@
 		FCF1F6AD1B1CBF7100DDE270 /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F6AC1B1CBF7100DDE270 /* InboxTableViewController.m */; };
 		FCF1F6B51B2B23B000DDE270 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6B41B2B23B000DDE270 /* Bolts.framework */; };
 		FCF1F6B71B2B23BF00DDE270 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6B61B2B23BF00DDE270 /* Parse.framework */; };
+		FCF1F6B91B2B24DD00DDE270 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6B81B2B24DD00DDE270 /* CoreLocation.framework */; };
+		FCF1F6BB1B2B253200DDE270 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6BA1B2B253200DDE270 /* AudioToolbox.framework */; };
+		FCF1F6BD1B2B253B00DDE270 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6BC1B2B253B00DDE270 /* CFNetwork.framework */; };
+		FCF1F6BF1B2B254400DDE270 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6BE1B2B254400DDE270 /* CoreGraphics.framework */; };
+		FCF1F6C11B2B255800DDE270 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6C01B2B255800DDE270 /* MobileCoreServices.framework */; };
+		FCF1F6C31B2B256100DDE270 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6C21B2B256100DDE270 /* QuartzCore.framework */; };
+		FCF1F6C51B2B256B00DDE270 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6C41B2B256B00DDE270 /* Security.framework */; };
+		FCF1F6C71B2B257300DDE270 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6C61B2B257300DDE270 /* StoreKit.framework */; };
+		FCF1F6C91B2B257E00DDE270 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6C81B2B257E00DDE270 /* SystemConfiguration.framework */; };
+		FCF1F6CB1B2B260C00DDE270 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6CA1B2B260C00DDE270 /* libz.dylib */; };
+		FCF1F6CD1B2B261D00DDE270 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6CC1B2B261D00DDE270 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +51,6 @@
 		FCF1F67A1B1BB77400DDE270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FCF1F67C1B1BB77400DDE270 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FCF1F67D1B1BB77400DDE270 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FCF1F67F1B1BB77400DDE270 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FCF1F6801B1BB77500DDE270 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FCF1F6831B1BB77500DDE270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCF1F6851B1BB77500DDE270 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCF1F6881B1BB77500DDE270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -59,6 +67,17 @@
 		FCF1F6AC1B1CBF7100DDE270 /* InboxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxTableViewController.m; path = ../InboxTableViewController.m; sourceTree = "<group>"; };
 		FCF1F6B41B2B23B000DDE270 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		FCF1F6B61B2B23BF00DDE270 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		FCF1F6B81B2B24DD00DDE270 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FCF1F6BA1B2B253200DDE270 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FCF1F6BC1B2B253B00DDE270 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FCF1F6BE1B2B254400DDE270 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FCF1F6C01B2B255800DDE270 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FCF1F6C21B2B256100DDE270 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FCF1F6C41B2B256B00DDE270 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FCF1F6C61B2B257300DDE270 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FCF1F6C81B2B257E00DDE270 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FCF1F6CA1B2B260C00DDE270 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FCF1F6CC1B2B261D00DDE270 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +85,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF1F6CD1B2B261D00DDE270 /* libsqlite3.dylib in Frameworks */,
+				FCF1F6CB1B2B260C00DDE270 /* libz.dylib in Frameworks */,
+				FCF1F6C91B2B257E00DDE270 /* SystemConfiguration.framework in Frameworks */,
+				FCF1F6C71B2B257300DDE270 /* StoreKit.framework in Frameworks */,
+				FCF1F6C51B2B256B00DDE270 /* Security.framework in Frameworks */,
+				FCF1F6C31B2B256100DDE270 /* QuartzCore.framework in Frameworks */,
+				FCF1F6C11B2B255800DDE270 /* MobileCoreServices.framework in Frameworks */,
+				FCF1F6B91B2B24DD00DDE270 /* CoreLocation.framework in Frameworks */,
+				FCF1F6BF1B2B254400DDE270 /* CoreGraphics.framework in Frameworks */,
+				FCF1F6BD1B2B253B00DDE270 /* CFNetwork.framework in Frameworks */,
+				FCF1F6BB1B2B253200DDE270 /* AudioToolbox.framework in Frameworks */,
 				FCF1F6B71B2B23BF00DDE270 /* Parse.framework in Frameworks */,
 				FCF1F6B51B2B23B000DDE270 /* Bolts.framework in Frameworks */,
 			);
@@ -84,8 +114,7 @@
 		FCF1F66C1B1BB77400DDE270 = {
 			isa = PBXGroup;
 			children = (
-				FCF1F6B61B2B23BF00DDE270 /* Parse.framework */,
-				FCF1F6B41B2B23B000DDE270 /* Bolts.framework */,
+				FCF1F6CE1B2B265A00DDE270 /* Frameworks */,
 				FCF1F69E1B1BB8DE00DDE270 /* Images */,
 				FCF1F6771B1BB77400DDE270 /* Ribbit */,
 				FCF1F6911B1BB77500DDE270 /* RibbitTests */,
@@ -109,8 +138,6 @@
 				FCF1F67D1B1BB77400DDE270 /* AppDelegate.m */,
 				FCF1F6AB1B1CBF7100DDE270 /* InboxTableViewController.h */,
 				FCF1F6AC1B1CBF7100DDE270 /* InboxTableViewController.m */,
-				FCF1F67F1B1BB77400DDE270 /* ViewController.h */,
-				FCF1F6801B1BB77500DDE270 /* ViewController.m */,
 				FCF1F6821B1BB77500DDE270 /* Main.storyboard */,
 				FCF1F6851B1BB77500DDE270 /* Images.xcassets */,
 				FCF1F6871B1BB77500DDE270 /* LaunchScreen.xib */,
@@ -157,6 +184,26 @@
 			);
 			name = Images;
 			path = tab_bar_icons;
+			sourceTree = "<group>";
+		};
+		FCF1F6CE1B2B265A00DDE270 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCF1F6CC1B2B261D00DDE270 /* libsqlite3.dylib */,
+				FCF1F6CA1B2B260C00DDE270 /* libz.dylib */,
+				FCF1F6C81B2B257E00DDE270 /* SystemConfiguration.framework */,
+				FCF1F6C61B2B257300DDE270 /* StoreKit.framework */,
+				FCF1F6C41B2B256B00DDE270 /* Security.framework */,
+				FCF1F6C21B2B256100DDE270 /* QuartzCore.framework */,
+				FCF1F6C01B2B255800DDE270 /* MobileCoreServices.framework */,
+				FCF1F6BE1B2B254400DDE270 /* CoreGraphics.framework */,
+				FCF1F6BC1B2B253B00DDE270 /* CFNetwork.framework */,
+				FCF1F6BA1B2B253200DDE270 /* AudioToolbox.framework */,
+				FCF1F6B81B2B24DD00DDE270 /* CoreLocation.framework */,
+				FCF1F6B61B2B23BF00DDE270 /* Parse.framework */,
+				FCF1F6B41B2B23B000DDE270 /* Bolts.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF1F6AD1B1CBF7100DDE270 /* InboxTableViewController.m in Sources */,
-				FCF1F6811B1BB77500DDE270 /* ViewController.m in Sources */,
 				FCF1F67E1B1BB77400DDE270 /* AppDelegate.m in Sources */,
 				FCF1F67B1B1BB77400DDE270 /* main.m in Sources */,
 			);
@@ -467,6 +513,7 @@
 				FCF1F69A1B1BB77500DDE270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCF1F69B1B1BB77500DDE270 /* Build configuration list for PBXNativeTarget "RibbitTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +522,7 @@
 				FCF1F69D1B1BB77500DDE270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
