@@ -22,11 +22,6 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 /*
 #pragma mark - Navigation
 
@@ -37,7 +32,28 @@
 }
 */
 - (IBAction)signUp:(id)sender {
+    NSString *userName = [self.userNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *password = self.passwordTextField.text;
+    NSString *email = self.emailTextField.text;
     
+    if (![userName length]|| ![password length] || ![email length]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                        message:@"Make sure to enter a Username, Password, and Email"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+//                                                                   message:@"This is an alert."
+//                                                            preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
+//                                                            style:UIAlertActionStyleDefault
+//                                                          handler:^(UIAlertAction * action) {}];
+//    
+//    [alert addAction:defaultAction];
+//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
