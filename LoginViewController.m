@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -33,5 +35,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)login:(id)sender {
+    
+}
+
 
 @end

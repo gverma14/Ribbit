@@ -7,7 +7,7 @@
 //
 
 #import "SignUpViewController.h"
-
+#import <Parse/Parse.h>
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -43,6 +43,24 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+    }
+    else {
+        PFUser *newUser = [PFUser user];
+        newUser.username = userName;
+        newUser.password = password;
+        newUser.email = email;
+        
+        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+                [alert show];
+            }
+            else {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+                
+            }
+        }];
+        
     }
 //    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
 //                                                                   message:@"This is an alert."
