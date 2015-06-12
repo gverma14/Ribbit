@@ -9,6 +9,9 @@
 #import "SignUpViewController.h"
 
 @interface SignUpViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 
 @end
 
@@ -33,5 +36,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)signUp:(id)sender {
+    
+}
 
 @end

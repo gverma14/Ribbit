@@ -216,6 +216,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUp:" destination="9d9-kX-p5y" eventType="touchUpInside" id="k7g-oS-nRP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -235,6 +238,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ribbit" id="vU4-Ow-ry0"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Bee-1U-GWx" id="Nfc-p7-CL2"/>
+                        <outlet property="passwordTextField" destination="NPx-gY-Rzb" id="v5b-Jx-3tF"/>
+                        <outlet property="userNameTextField" destination="uGK-i7-RFg" id="tr0-Gu-vRv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ba-2v-EIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
