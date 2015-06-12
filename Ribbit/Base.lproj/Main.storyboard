@@ -28,7 +28,7 @@
         <!--Ribbit-->
         <scene sceneID="IGi-RW-RG4">
             <objects>
-                <viewController id="llh-At-7MN" sceneMemberID="viewController">
+                <viewController id="llh-At-7MN" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NPY-7x-las"/>
                         <viewControllerLayoutGuide type="bottom" id="Pi9-iM-fY7"/>
@@ -187,7 +187,7 @@
         <!--Ribbit-->
         <scene sceneID="pTX-ma-q9A">
             <objects>
-                <viewController id="9d9-kX-p5y" sceneMemberID="viewController">
+                <viewController id="9d9-kX-p5y" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tRI-3k-4kc"/>
                         <viewControllerLayoutGuide type="bottom" id="Lua-UH-zzt"/>

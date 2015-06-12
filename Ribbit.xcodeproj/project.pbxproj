@@ -33,6 +33,8 @@
 		FCF1F6C91B2B257E00DDE270 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6C81B2B257E00DDE270 /* SystemConfiguration.framework */; };
 		FCF1F6CB1B2B260C00DDE270 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6CA1B2B260C00DDE270 /* libz.dylib */; };
 		FCF1F6CD1B2B261D00DDE270 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1F6CC1B2B261D00DDE270 /* libsqlite3.dylib */; };
+		FCF1F6D11B2B2E6800DDE270 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F6D01B2B2E6800DDE270 /* LoginViewController.m */; };
+		FCF1F6D71B2B2EE800DDE270 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F6D61B2B2EE800DDE270 /* SignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,10 @@
 		FCF1F6C81B2B257E00DDE270 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FCF1F6CA1B2B260C00DDE270 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FCF1F6CC1B2B261D00DDE270 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FCF1F6CF1B2B2E6800DDE270 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		FCF1F6D01B2B2E6800DDE270 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		FCF1F6D51B2B2EE800DDE270 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		FCF1F6D61B2B2EE800DDE270 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,9 +142,13 @@
 			children = (
 				FCF1F67C1B1BB77400DDE270 /* AppDelegate.h */,
 				FCF1F67D1B1BB77400DDE270 /* AppDelegate.m */,
+				FCF1F6CF1B2B2E6800DDE270 /* LoginViewController.h */,
+				FCF1F6D01B2B2E6800DDE270 /* LoginViewController.m */,
 				FCF1F6AB1B1CBF7100DDE270 /* InboxTableViewController.h */,
 				FCF1F6AC1B1CBF7100DDE270 /* InboxTableViewController.m */,
 				FCF1F6821B1BB77500DDE270 /* Main.storyboard */,
+				FCF1F6D51B2B2EE800DDE270 /* SignUpViewController.h */,
+				FCF1F6D61B2B2EE800DDE270 /* SignUpViewController.m */,
 				FCF1F6851B1BB77500DDE270 /* Images.xcassets */,
 				FCF1F6871B1BB77500DDE270 /* LaunchScreen.xib */,
 				FCF1F6781B1BB77400DDE270 /* Supporting Files */,
@@ -312,6 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF1F6D11B2B2E6800DDE270 /* LoginViewController.m in Sources */,
+				FCF1F6D71B2B2EE800DDE270 /* SignUpViewController.m in Sources */,
 				FCF1F6AD1B1CBF7100DDE270 /* InboxTableViewController.m in Sources */,
 				FCF1F67E1B1BB77400DDE270 /* AppDelegate.m in Sources */,
 				FCF1F67B1B1BB77400DDE270 /* main.m in Sources */,
