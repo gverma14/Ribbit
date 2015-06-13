@@ -23,9 +23,11 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         else {
-            
+            self.allUsers = objects;
+            [self.tableView reloadData];
         }
-    }]
+    }];
+    
 }
 
 
@@ -37,9 +39,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    
+    return [self.allUsers count];
+    //return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *identifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
+    cell.textLabel.text = user.username;
+    
+    return cell;
 }
 
 
