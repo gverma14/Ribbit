@@ -18,7 +18,17 @@
     [super viewDidLoad];
     
     
+    PFUser *currentUser = [PFUser currentUser];
     
+    if (!currentUser) {
+        
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
+    
+    else {
+        NSLog(@"%@", currentUser.username);
+        
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -27,12 +37,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)logout:(id)sender {
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    
 }
 
 #pragma mark - Table view data source

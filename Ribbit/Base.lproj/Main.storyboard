@@ -182,7 +182,13 @@
                             <outlet property="delegate" destination="sFT-IC-7Fq" id="8vw-HL-x7k"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ribbit" id="8ET-Vr-p9p"/>
+                    <navigationItem key="navigationItem" title="Ribbit" id="8ET-Vr-p9p">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="aWK-rN-3WF">
+                            <connections>
+                                <action selector="logout:" destination="sFT-IC-7Fq" id="IcR-x3-bOG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="llh-At-7MN" kind="push" identifier="showLogin" id="WNb-OS-q8E"/>
                     </connections>
