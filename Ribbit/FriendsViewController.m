@@ -17,6 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   
+    
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
@@ -29,7 +36,6 @@
             [self.tableView reloadData];
         }
     }];
-    
 }
 
 
