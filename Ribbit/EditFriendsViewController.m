@@ -58,6 +58,10 @@
     return cell;
 }
 
+
+
+#pragma mark - Table view delegate
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -78,6 +82,12 @@
 }
 
 
+# pragma mark - Helper methods
+
+//-(BOOL) isFriend:(PFUser *)user
+//{
+//    
+//}
 
 
 @end
