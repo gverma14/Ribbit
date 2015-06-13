@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zk0-su-y6e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zk0-su-y6e">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="1783" y="-168"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Friends-->
         <scene sceneID="EGQ-LN-9bu">
             <objects>
                 <tableViewController id="PXK-Ka-2GM" sceneMemberID="viewController">
@@ -128,11 +128,44 @@
                             <outlet property="delegate" destination="PXK-Ka-2GM" id="UqY-K5-iSi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="mo4-av-kac"/>
+                    <navigationItem key="navigationItem" title="Friends" id="mo4-av-kac">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="gKp-rE-qjm">
+                            <connections>
+                                <segue destination="z0i-07-vvI" kind="push" id="zXt-DV-3Ah"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pds-sB-aig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1373" y="471"/>
+        </scene>
+        <!--Edit Friends-->
+        <scene sceneID="vds-V2-ECB">
+            <objects>
+                <tableViewController id="z0i-07-vvI" customClass="EditFriendsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="c2B-Bf-stc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YH4-jE-hUc">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YH4-jE-hUc" id="msK-8A-Zvg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z0i-07-vvI" id="7jz-b7-5JC"/>
+                            <outlet property="delegate" destination="z0i-07-vvI" id="APa-UK-RFa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Friends" id="NrB-rE-gmT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BEy-VC-aYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="471"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Mi8-mQ-004">
