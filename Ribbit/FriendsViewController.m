@@ -7,6 +7,7 @@
 //
 
 #import "FriendsViewController.h"
+#import "EditFriendsViewController.h"
 
 @interface FriendsViewController ()
 
@@ -51,6 +52,17 @@
     PFUser *user = [self.friends objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
     return cell;
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showEditFriends"]) {
+        EditFriendsViewController *viewController = (EditFriendsViewController *)segue.destinationViewController;
+        viewController.friends = [NSMutableArray arrayWithArray:self.friends];
+        
+        
+    }
 }
 
 @end

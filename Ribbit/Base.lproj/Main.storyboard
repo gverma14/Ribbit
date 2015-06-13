@@ -131,7 +131,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="mo4-av-kac">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="gKp-rE-qjm">
                             <connections>
-                                <segue destination="z0i-07-vvI" kind="push" id="zXt-DV-3Ah"/>
+                                <segue destination="z0i-07-vvI" kind="push" identifier="showEditFriends" id="zXt-DV-3Ah"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

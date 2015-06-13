@@ -55,6 +55,14 @@
     PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
     
+    if ([self isFriend:user]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    
     return cell;
 }
 
@@ -66,17 +74,35 @@
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    
     PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
     PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
-    [friendsRelation addObject:user];
+    
+    if ([self isFriend:user]) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        for (PFUser *friend in self.friends) {
+            if ([friend.objectId isEqualToString:user.objectId]) {
+                [self.friends removeObject:friend];
+                break;
+            }
+            
+        }
+        
+        [friendsRelation removeObject:user];
+        
+    }
+    else {
+        [friendsRelation addObject:user];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.friends addObject:user];
+    }
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
     
-    [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     
     
 }
@@ -84,10 +110,17 @@
 
 # pragma mark - Helper methods
 
-//-(BOOL) isFriend:(PFUser *)user
-//{
-//    
-//}
+-(BOOL) isFriend:(PFUser *)user
+{
+    for (PFUser *friend in self.friends) {
+        if ([friend.objectId isEqualToString:user.objectId]) {
+            return YES;
+        }
+        
+    }
+    
+    return NO;
+}
 
 
 @end
