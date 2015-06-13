@@ -46,6 +46,14 @@
     
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showLogin"]) {
+        [[segue.destinationViewController navigationItem] setHidesBackButton:YES animated:NO];
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -20,8 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.hidesBackButton = YES;
-    
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]];
+    //self.navigationItem.hidesBackButton = YES;
+    //self.navigationItem.hidesBackButton = YES;
+
 }
 
 
