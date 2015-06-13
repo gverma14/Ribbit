@@ -110,7 +110,7 @@
         <!--Friends-->
         <scene sceneID="EGQ-LN-9bu">
             <objects>
-                <tableViewController id="PXK-Ka-2GM" sceneMemberID="viewController">
+                <tableViewController id="PXK-Ka-2GM" customClass="FriendsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pLH-KA-q7m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

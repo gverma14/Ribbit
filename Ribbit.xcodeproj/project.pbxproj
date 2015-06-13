@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC1541DD1B2BCE8E00761A55 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1541DC1B2BCE8E00761A55 /* EditFriendsViewController.m */; };
+		FC1541E01B2BE16000761A55 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1541DF1B2BE16000761A55 /* FriendsViewController.m */; };
 		FCF1F67B1B1BB77400DDE270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F67A1B1BB77400DDE270 /* main.m */; };
 		FCF1F67E1B1BB77400DDE270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F67D1B1BB77400DDE270 /* AppDelegate.m */; };
 		FCF1F6841B1BB77500DDE270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6821B1BB77500DDE270 /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		FC1541DB1B2BCE8E00761A55 /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
 		FC1541DC1B2BCE8E00761A55 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
+		FC1541DE1B2BE16000761A55 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		FC1541DF1B2BE16000761A55 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		FCF1F6751B1BB77400DDE270 /* Ribbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ribbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF1F6791B1BB77400DDE270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCF1F67A1B1BB77400DDE270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				FCF1F6821B1BB77500DDE270 /* Main.storyboard */,
 				FC1541DB1B2BCE8E00761A55 /* EditFriendsViewController.h */,
 				FC1541DC1B2BCE8E00761A55 /* EditFriendsViewController.m */,
+				FC1541DE1B2BE16000761A55 /* FriendsViewController.h */,
+				FC1541DF1B2BE16000761A55 /* FriendsViewController.m */,
 				FCF1F6D51B2B2EE800DDE270 /* SignUpViewController.h */,
 				FCF1F6D61B2B2EE800DDE270 /* SignUpViewController.m */,
 				FCF1F6851B1BB77500DDE270 /* Images.xcassets */,
@@ -329,6 +334,7 @@
 			files = (
 				FCF1F6D11B2B2E6800DDE270 /* LoginViewController.m in Sources */,
 				FCF1F6D71B2B2EE800DDE270 /* SignUpViewController.m in Sources */,
+				FC1541E01B2BE16000761A55 /* FriendsViewController.m in Sources */,
 				FCF1F6AD1B1CBF7100DDE270 /* InboxTableViewController.m in Sources */,
 				FCF1F67E1B1BB77400DDE270 /* AppDelegate.m in Sources */,
 				FC1541DD1B2BCE8E00761A55 /* EditFriendsViewController.m in Sources */,
