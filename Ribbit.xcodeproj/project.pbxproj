@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC1541DD1B2BCE8E00761A55 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1541DC1B2BCE8E00761A55 /* EditFriendsViewController.m */; };
 		FC1541E01B2BE16000761A55 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1541DF1B2BE16000761A55 /* FriendsViewController.m */; };
+		FC1541E31B2DEAC300761A55 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1541E21B2DEAC300761A55 /* CameraViewController.m */; };
 		FCF1F67B1B1BB77400DDE270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F67A1B1BB77400DDE270 /* main.m */; };
 		FCF1F67E1B1BB77400DDE270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF1F67D1B1BB77400DDE270 /* AppDelegate.m */; };
 		FCF1F6841B1BB77500DDE270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF1F6821B1BB77500DDE270 /* Main.storyboard */; };
@@ -54,6 +55,8 @@
 		FC1541DC1B2BCE8E00761A55 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 		FC1541DE1B2BE16000761A55 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		FC1541DF1B2BE16000761A55 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		FC1541E11B2DEAC300761A55 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = ../CameraViewController.h; sourceTree = "<group>"; };
+		FC1541E21B2DEAC300761A55 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = ../CameraViewController.m; sourceTree = "<group>"; };
 		FCF1F6751B1BB77400DDE270 /* Ribbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ribbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF1F6791B1BB77400DDE270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCF1F67A1B1BB77400DDE270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				FCF1F67C1B1BB77400DDE270 /* AppDelegate.h */,
 				FCF1F67D1B1BB77400DDE270 /* AppDelegate.m */,
 				FCF1F6CF1B2B2E6800DDE270 /* LoginViewController.h */,
+				FC1541E11B2DEAC300761A55 /* CameraViewController.h */,
+				FC1541E21B2DEAC300761A55 /* CameraViewController.m */,
 				FCF1F6D01B2B2E6800DDE270 /* LoginViewController.m */,
 				FCF1F6AB1B1CBF7100DDE270 /* InboxTableViewController.h */,
 				FCF1F6AC1B1CBF7100DDE270 /* InboxTableViewController.m */,
@@ -333,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF1F6D11B2B2E6800DDE270 /* LoginViewController.m in Sources */,
+				FC1541E31B2DEAC300761A55 /* CameraViewController.m in Sources */,
 				FCF1F6D71B2B2EE800DDE270 /* SignUpViewController.m in Sources */,
 				FC1541E01B2BE16000761A55 /* FriendsViewController.m in Sources */,
 				FCF1F6AD1B1CBF7100DDE270 /* InboxTableViewController.m in Sources */,

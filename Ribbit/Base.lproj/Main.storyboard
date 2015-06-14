@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="1783" y="471"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="Mi8-mQ-004">
             <objects>
-                <tableViewController id="KPg-A9-Ij4" sceneMemberID="viewController">
+                <tableViewController id="KPg-A9-Ij4" customClass="CameraViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UPu-Ut-Gfp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,11 +332,11 @@
             </objects>
             <point key="canvasLocation" x="841" y="471"/>
         </scene>
-        <!--Item-->
+        <!--Camera-->
         <scene sceneID="bTm-La-RYI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xic-AF-bFU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="camera.png" id="bAI-43-tev"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera.png" id="bAI-43-tev"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3sH-Eq-ePW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.currentUser = [PFUser currentUser];
     PFQuery *query = [PFUser query];
     [query orderByAscending:@"username"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -23,12 +24,21 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         else {
-            self.allUsers = objects;
+            
+            NSMutableArray *mutableObjects = [NSMutableArray arrayWithArray:objects];
+            
+            [mutableObjects removeObject:self.currentUser];
+            NSLog(@"muting objects");
+            
+            self.allUsers = mutableObjects;
+            
+            
+            
             [self.tableView reloadData];
         }
     }];
     
-    self.currentUser = [PFUser currentUser];
+    
     
     
 }
