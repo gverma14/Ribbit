@@ -7,20 +7,29 @@
 //
 
 #import "CameraViewController.h"
-
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <Parse/Parse.h>
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
+@property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSString *videoFilePath;
+@property (strong, nonatomic) NSArray *friends;
+@property (strong, nonatomic) PFRelation *friendsRelation;
+
 @end
 
 @implementation CameraViewController
-
-
+//
 -(UIImagePickerController *)imagePicker
 {
     if (!_imagePicker) {
         _imagePicker = [[UIImagePickerController alloc] init];
         _imagePicker.delegate = self;
         _imagePicker.allowsEditing = NO;
+        _imagePicker.videoMaximumDuration = 10;
+        _imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+        
+        
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         }
@@ -29,13 +38,16 @@
         }
         
         _imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:_imagePicker.sourceType];
+        
+        
     }
     return _imagePicker;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+
     
     
     
@@ -49,34 +61,65 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
+//    //[super vi:animated];
+//    self.imagePicker = [[UIImagePickerController alloc] init];
+//    self.imagePicker.delegate = self;
+//    self.imagePicker.allowsEditing = NO;
+//    self.imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+//    self.imagePicker.videoMaximumDuration = 10;
+//    
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    }
+//    else {
+//        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    }
+//    
+//    _imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
     [super viewWillAppear:animated];
-    [self presentViewController:self.imagePicker animated:NO completion:nil];
+    
+    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    PFQuery *query = [self.friendsRelation query];
+    [query orderByAscending:@"username"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"%@ %@", error, [error userInfo]);
+        }
+        else {
+            self.friends = objects;
+            [self.tableView reloadData];
+        }
+    }];
+    
+    
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
 }
 
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.friends count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
     
+    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+    cell.textLabel.text = user.username;
+    
     return cell;
 }
-*/
+
 
 
 #pragma mark - Image Picker Controller Delegate
@@ -91,6 +134,42 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    
+    NSLog(@"picked media");
+
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
+        // A photo was taken or selected
+        self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+            UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
+            
+        }
+        
+        
+    }
+    else {
+        
+        
+        NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+        
+        self.videoFilePath = [videoURL path];
+        
+        if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+            
+            if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(self.videoFilePath)) {
+                UISaveVideoAtPathToSavedPhotosAlbum(self.videoFilePath, nil, nil, nil);
+            }
+            
+        }
+        
+        
+        
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
     
 }
 

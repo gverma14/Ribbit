@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zk0-su-y6e">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -167,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="1783" y="471"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Recipients-->
         <scene sceneID="Mi8-mQ-004">
             <objects>
                 <tableViewController id="KPg-A9-Ij4" customClass="CameraViewController" sceneMemberID="viewController">
@@ -176,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NWP-Zw-SHz">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="NWP-Zw-SHz">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NWP-Zw-SHz" id="eHW-Hq-tMS">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -188,7 +189,7 @@
                             <outlet property="delegate" destination="KPg-A9-Ij4" id="7jN-6t-hwn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wq9-3d-5nK"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="wq9-3d-5nK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QeD-Qo-nkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
