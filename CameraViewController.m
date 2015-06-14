@@ -37,13 +37,20 @@
     [super viewDidLoad];
     
     
-    [self presentViewController:self.imagePicker animated:NO completion:nil];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self presentViewController:self.imagePicker animated:NO completion:nil];
 }
 
 
@@ -72,7 +79,20 @@
 */
 
 
+#pragma mark - Image Picker Controller Delegate
 
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.tabBarController setSelectedIndex:0];
+    
+    
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    
+}
 
 
 @end
