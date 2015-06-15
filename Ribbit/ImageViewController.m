@@ -22,6 +22,9 @@
     NSURL *imageFileURL = [[NSURL alloc] initWithString:imageFile.url];
     NSData *imageData = [NSData dataWithContentsOfURL:imageFileURL];
     self.imageView.image = [UIImage imageWithData:imageData];
+    NSString *senderName = [self.message objectForKey:@"senderName"];
+    NSString *title = [NSString stringWithFormat:@"Sent from %@", senderName];
+    self.navigationItem.title = title;
     
 }
 
