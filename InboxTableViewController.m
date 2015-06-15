@@ -49,25 +49,31 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    
     [super viewWillAppear:animated];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
-    
-    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
-    [query orderByDescending:@"createdAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"%@ %@", error, [error userInfo]);
-            
-        }
-        else {
-            NSLog(@"%d Messages found", [objects count]);
-            self.messages = objects;
-            [self.tableView reloadData];
-        }
-    }];
-    
+    if ([PFUser currentUser]) {
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+        
+        
+        [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+        [query orderByDescending:@"createdAt"];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (error) {
+                NSLog(@"%@ %@", error, [error userInfo]);
+                
+            }
+            else {
+                NSLog(@"%d Messages found", [objects count]);
+                self.messages = objects;
+                [self.tableView reloadData];
+            }
+        }];
+        
+
+        
+    }
     
 }
 
