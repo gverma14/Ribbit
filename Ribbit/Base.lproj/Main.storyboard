@@ -206,6 +206,30 @@
             </objects>
             <point key="canvasLocation" x="1373" y="1226"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="nCl-ho-19d">
+            <objects>
+                <viewController id="GA6-jL-84g" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aWX-QA-2G5"/>
+                        <viewControllerLayoutGuide type="bottom" id="t2y-tI-Sha"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Izw-Ta-Tjc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Hx-QL-Fs5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zME-ea-PGd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yw9-ry-FU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373" y="-827"/>
+        </scene>
         <!--Ribbit-->
         <scene sceneID="mww-mJ-LE6">
             <objects>
@@ -319,6 +343,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="sFT-IC-7Fq" kind="relationship" relationship="rootViewController" id="9HF-mQ-0Dl"/>
+                        <segue destination="GA6-jL-84g" kind="push" identifier="showImage" id="5R0-Gg-esV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26D-Q0-C62" userLabel="First Responder" sceneMemberID="firstResponder"/>
