@@ -25,6 +25,7 @@
     NSString *senderName = [self.message objectForKey:@"senderName"];
     NSString *title = [NSString stringWithFormat:@"Sent from %@", senderName];
     self.navigationItem.title = title;
+    self.navigationController.hidesBarsOnTap = YES;
     
 }
 
@@ -45,6 +46,7 @@
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 
 
 
