@@ -25,19 +25,24 @@
     NSString *senderName = [self.message objectForKey:@"senderName"];
     NSString *title = [NSString stringWithFormat:@"Sent from %@", senderName];
     self.navigationItem.title = title;
-    self.navigationController.hidesBarsOnTap = YES;
     
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.navigationController.hidesBarsOnTap = YES;
     [NSTimer scheduledTimerWithTimeInterval:10
                                      target:self
                                    selector:@selector(timeout)
                                    userInfo:nil
                                     repeats:NO];
     
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.hidesBarsOnTap = NO;
 }
 
 
