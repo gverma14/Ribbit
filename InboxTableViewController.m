@@ -142,6 +142,9 @@
         NSURL *fileURL = [NSURL URLWithString:videoFile.url];
         self.moviePlayer.contentURL = fileURL;
         [self.moviePlayer prepareToPlay];
+        //[self.moviePlayer thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+        
+        [self.moviePlayer requestThumbnailImagesAtTimes:@[@0] timeOption:MPMovieTimeOptionNearestKeyFrame];
         
         [self.view addSubview:self.moviePlayer.view];
         [self.moviePlayer setFullscreen:YES animated:YES];

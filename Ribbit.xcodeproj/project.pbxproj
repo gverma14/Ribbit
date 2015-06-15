@@ -68,6 +68,7 @@
 		FCE6E9641B2E792D007FC471 /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
 		FCE6E9691B2E7BD3007FC471 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		FCE6E96A1B2E7BD3007FC471 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		FCE6E96C1B2E8E5C007FC471 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FCF1F6751B1BB77400DDE270 /* Ribbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ribbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF1F6791B1BB77400DDE270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCF1F67A1B1BB77400DDE270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 		FCF1F6CE1B2B265A00DDE270 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCE6E96C1B2E8E5C007FC471 /* MediaPlayer.framework */,
 				FCF1F6CC1B2B261D00DDE270 /* libsqlite3.dylib */,
 				FCF1F6CA1B2B260C00DDE270 /* libz.dylib */,
 				FCF1F6C81B2B257E00DDE270 /* SystemConfiguration.framework */,
