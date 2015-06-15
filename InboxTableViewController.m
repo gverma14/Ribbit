@@ -100,6 +100,16 @@
 
     PFObject *message = [self.messages objectAtIndex:indexPath.row];
     cell.textLabel.text = [message objectForKey:@"senderName"];
+    NSString *fileType = [message objectForKey:@"fileType"];
+    
+    if ([fileType isEqualToString:@"image"]) {
+        cell.imageView.image = [UIImage imageNamed:@"icon_image"];
+        
+    }
+    else {
+        cell.imageView.image = [UIImage imageNamed:@"icon_video"];
+    }
+    
     
     return cell;
 }
