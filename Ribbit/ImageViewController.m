@@ -28,7 +28,23 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [NSTimer scheduledTimerWithTimeInterval:10
+                                     target:self
+                                   selector:@selector(timeout)
+                                   userInfo:nil
+                                    repeats:NO];
+    
+}
 
+
+#pragma mark - Helper methods
+-(void)timeout
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
 
