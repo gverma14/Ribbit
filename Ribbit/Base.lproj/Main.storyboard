@@ -228,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yw9-ry-FU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1373" y="-827"/>
+            <point key="canvasLocation" x="1783" y="-843"/>
         </scene>
         <!--Ribbit-->
         <scene sceneID="mww-mJ-LE6">
@@ -260,6 +260,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="llh-At-7MN" kind="push" identifier="showLogin" id="WNb-OS-q8E"/>
+                        <segue destination="GA6-jL-84g" kind="push" identifier="showImage" id="8HK-mW-Uv3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khj-Nv-szm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,7 +344,6 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="sFT-IC-7Fq" kind="relationship" relationship="rootViewController" id="9HF-mQ-0Dl"/>
-                        <segue destination="GA6-jL-84g" kind="push" identifier="showImage" id="5R0-Gg-esV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26D-Q0-C62" userLabel="First Responder" sceneMemberID="firstResponder"/>
