@@ -151,6 +151,18 @@
         
         
     }
+    
+    NSMutableArray *recipientIds = [NSMutableArray arrayWithArray:[self.selectedMessage objectForKey:@"recipientIds"]];
+    
+    if ([recipientIds count] == 1) {
+        [self.selectedMessage deleteInBackground];
+    }
+    else {
+        [recipientIds removeObject:[[PFUser currentUser] objectId]];
+        [self.selectedMessage setObject:recipientIds forKey:@"recipientIds"];
+        [self.selectedMessage saveInBackground];
+        
+    }
 }
 
 -(MPMoviePlayerController *)moviePlayer
