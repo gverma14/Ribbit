@@ -32,7 +32,7 @@
 {
     [super viewDidAppear:animated];
     self.navigationController.hidesBarsOnTap = YES;
-    [NSTimer scheduledTimerWithTimeInterval:10
+    [NSTimer scheduledTimerWithTimeInterval:5
                                      target:self
                                    selector:@selector(timeout)
                                    userInfo:nil
@@ -43,6 +43,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     self.navigationController.hidesBarsOnTap = NO;
+    self.navigationController.navigationBarHidden = NO;
 }
 
 
