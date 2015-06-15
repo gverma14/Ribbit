@@ -9,9 +9,13 @@
 #import "InboxTableViewController.h"
 #import "ImageViewController.h"
 #import <Parse/Parse.h>
+#import <MediaPlayer/MediaPlayer.h>
+
 @interface InboxTableViewController ()
 @property (nonatomic, strong) NSArray *messages;
 @property (nonatomic, strong) PFObject *selectedMessage;
+@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+
 @end
 
 @implementation InboxTableViewController
@@ -134,8 +138,25 @@
         [self performSegueWithIdentifier:@"showImage" sender:self];
     }
     else {
+        PFFile *videoFile = [self.selectedMessage objectForKey:@"file"];
+        NSURL *fileURL = [NSURL URLWithString:videoFile.url];
+        self.moviePlayer.contentURL = fileURL;
+        [self.moviePlayer prepareToPlay];
+        
+        [self.view addSubview:self.moviePlayer.view];
+        [self.moviePlayer setFullscreen:YES animated:YES];
+        
         
     }
+}
+
+-(MPMoviePlayerController *)moviePlayer
+{
+    if (!_moviePlayer) {
+        _moviePlayer = [[MPMoviePlayerController alloc] init];
+    }
+    
+    return _moviePlayer;
 }
 
 
