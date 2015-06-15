@@ -189,7 +189,18 @@
                             <outlet property="delegate" destination="KPg-A9-Ij4" id="7jN-6t-hwn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipients" id="wq9-3d-5nK"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="wq9-3d-5nK">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="DlN-Uy-zBv">
+                            <connections>
+                                <action selector="cancel:" destination="KPg-A9-Ij4" id="SFM-1y-HqF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="6EB-Ev-KrT">
+                            <connections>
+                                <action selector="send:" destination="KPg-A9-Ij4" id="pgl-gG-JS2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QeD-Qo-nkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

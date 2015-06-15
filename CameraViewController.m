@@ -193,10 +193,10 @@
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         // A photo was taken or selected
         self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-        //if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
             UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
             
-        //}
+        }
         
         
     }
@@ -224,6 +224,48 @@
     
 }
 
+#pragma mark - IB Actions
 
+- (IBAction)cancel:(id)sender {
+    
+    [self reset];
+    [self.tabBarController setSelectedIndex:0];
+    
+}
+
+- (IBAction)send:(id)sender {
+    
+    if (self.image || [self.videoFilePath length]) {
+        
+        [self uploadMessage];
+        [self reset];
+        [self.tabBarController setSelectedIndex:0];
+        
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Try Again!" message:@"Please capture or select a photo or video to share" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alert show];
+        
+        [self presentViewController:self.imagePicker animated:YES completion:nil];
+        
+        
+    }
+    
+}
+
+#pragma mark - Helper methods
+-(void)uploadMessage
+{
+    
+}
+
+-(void)reset
+{
+    self.image = nil;
+    self.videoFilePath = nil;
+    [self.recipients removeAllObjects];
+    
+}
 
 @end
