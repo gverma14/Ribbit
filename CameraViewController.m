@@ -290,7 +290,7 @@
     
     PFFile *file = [PFFile fileWithName:fileName data:fileData contentType:fileType];
     
-    
+    self.tableView.allowsSelection = NO;
     
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
@@ -298,6 +298,7 @@
             
             [alert show];
             NSLog(@"%@", error);
+            self.tableView.allowsSelection = YES;
         }
         else {
             PFObject *message = [PFObject objectWithClassName:@"Messages"];
@@ -315,11 +316,14 @@
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:@"Please try sending your message again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                     
                     [alert show];
+                    self.tableView.allowsSelection = YES;
                     
                 }
                 else {
                     //Success
                     [self reset];
+                    [self.tabBarController setSelectedIndex:0];
+                    [self.tableView reloadData];
                     NSLog(@"Message send success");
                 }
             }];
