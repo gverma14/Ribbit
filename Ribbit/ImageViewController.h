@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <Parse/Parse.h>
 @interface ImageViewController : UIViewController
+
+@property PFObject *message;
 
 @end

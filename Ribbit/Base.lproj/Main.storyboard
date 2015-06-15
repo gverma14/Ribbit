@@ -225,6 +225,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zME-ea-PGd"/>
+                    <connections>
+                        <outlet property="imageView" destination="7Hx-QL-Fs5" id="qWR-UL-yuk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yw9-ry-FU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,10 +7,11 @@
 //
 
 #import "InboxTableViewController.h"
+#import "ImageViewController.h"
 #import <Parse/Parse.h>
 @interface InboxTableViewController ()
 @property (nonatomic, strong) NSArray *messages;
-
+@property (nonatomic, strong) PFObject *selectedMessage;
 @end
 
 @implementation InboxTableViewController
@@ -80,6 +81,12 @@
         [[segue.destinationViewController navigationItem] setHidesBackButton:YES animated:NO];
         [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
     }
+    else if ([segue.identifier isEqualToString:@"showImage"]) {
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+        ImageViewController *imageViewController = (ImageViewController *)segue.destinationViewController;
+        imageViewController.message = self.selectedMessage;
+        
+    }
 }
 
 #pragma mark - Table view data source
@@ -117,10 +124,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFObject *message = [self.messages objectAtIndex:indexPath.row];
-    NSString *fileType = [message objectForKey:@"fileType"];
+    self.selectedMessage = [self.messages objectAtIndex:indexPath.row];
+    NSString *fileType = [self.selectedMessage objectForKey:@"fileType"];
     
     if ([fileType isEqualToString:@"image"]) {
+        
         [self performSegueWithIdentifier:@"showImage" sender:self];
     }
     else {
