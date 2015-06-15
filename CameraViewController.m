@@ -27,8 +27,8 @@
         _imagePicker = [[UIImagePickerController alloc] init];
         _imagePicker.delegate = self;
         _imagePicker.allowsEditing = NO;
-        _imagePicker.videoMaximumDuration = 10;
-        _imagePicker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+        _imagePicker.videoMaximumDuration = 5;
+        
         
         
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -107,7 +107,7 @@
     
     if (!self.image && !self.videoFilePath) {
         
-        [self.tabBarController presentViewController:self.imagePicker animated:YES completion:nil];
+        [self.tabBarController presentViewController:self.imagePicker animated:NO completion:nil];
     }
     
 }
@@ -151,7 +151,7 @@
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
     PFUser *user = [self.friends objectAtIndex:indexPath.row];
     
     if (![self.recipients containsObject:user.objectId]) {
@@ -237,9 +237,20 @@
     
     if (self.image || [self.videoFilePath length]) {
         
-        [self uploadMessage];
-        [self reset];
-        [self.tabBarController setSelectedIndex:0];
+        if (![self.recipients count]) {
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Try Again!" message:@"Please select recipients to send your message to" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [alert show];
+            
+        }
+        else {
+            
+            [self uploadMessageWithImage:self.image videoFilePath:self.videoFilePath recipients:self.recipients];
+            [self.tabBarController setSelectedIndex:0];
+            
+        }
+        
         
     }
     else {
@@ -255,9 +266,67 @@
 }
 
 #pragma mark - Helper methods
--(void)uploadMessage
+-(void)uploadMessageWithImage:(UIImage *)image videoFilePath:(NSString *)videoFilePath recipients:(NSArray *)recipients
 {
+    NSData *fileData;
+    NSString *fileName;
+    NSString *fileType;
     
+    if (image) {
+        UIImage *newImage = [self resizeImage:image toWidth:320.0 height:480.0];
+        fileData = UIImagePNGRepresentation(newImage);
+        fileName = @"image.png";
+        fileType = @"image";
+        
+        
+    }
+    else {
+        fileData = [NSData dataWithContentsOfFile:videoFilePath];
+        fileName = @"video.mov";
+        fileType = @"video";
+        
+        
+    }
+    
+    PFFile *file = [PFFile fileWithName:fileName data:fileData contentType:fileType];
+    
+    
+    
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Upload File" message:@"Please try sending your message again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [alert show];
+            NSLog(@"%@", error);
+        }
+        else {
+            PFObject *message = [PFObject objectWithClassName:@"Messages"];
+            [message setObject:file forKey:@"file"];
+            [message setObject:fileType forKey:@"fileType"];
+            
+            NSLog(@"%@", recipients);
+            
+            [message setObject:recipients forKey:@"recipientIds"];
+            [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
+            [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+            [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:@"Please try sending your message again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    
+                    [alert show];
+                    
+                }
+                else {
+                    //Success
+                    [self reset];
+                    NSLog(@"Message send success");
+                }
+            }];
+            
+            
+        }
+    }];
 }
 
 -(void)reset
@@ -268,4 +337,16 @@
     
 }
 
+
+-(UIImage *)resizeImage:(UIImage *)image toWidth:(float)width height:(float)height
+{
+    CGSize newSize = CGSizeMake(width, height);
+    CGRect newRectangle = CGRectMake(0, 0, width, height);
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:newRectangle];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resizedImage;
+    
+}
 @end
