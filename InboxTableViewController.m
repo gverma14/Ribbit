@@ -9,6 +9,7 @@
 #import "InboxTableViewController.h"
 #import <Parse/Parse.h>
 @interface InboxTableViewController ()
+@property (nonatomic, strong) NSArray *messages;
 
 @end
 
@@ -39,6 +40,30 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    
+    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+    [query orderByDescending:@"createdAt"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"%@ %@", error, [error userInfo]);
+            
+        }
+        else {
+            NSLog(@"%d Messages found", [objects count]);
+            self.messages = objects;
+            [self.tableView reloadData];
+        }
+    }];
+    
+    
+}
+
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
@@ -60,16 +85,25 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.messages count];
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+
+    PFObject *message = [self.messages objectAtIndex:indexPath.row];
+    cell.textLabel.text = [message objectForKey:@"senderName"];
+    
+    return cell;
+}
+
 
 
 
