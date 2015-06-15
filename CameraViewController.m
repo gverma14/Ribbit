@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *videoFilePath;
 @property (strong, nonatomic) NSArray *friends;
 @property (strong, nonatomic) PFRelation *friendsRelation;
+@property (strong, nonatomic) NSMutableArray *recipients;
 
 @end
 
@@ -44,9 +45,20 @@
     return _imagePicker;
 }
 
+-(NSMutableArray *)recipients
+{
+    if (!_recipients) {
+        _recipients = [[NSMutableArray alloc] init];
+        
+    }
+    return _recipients;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    
+    
 
     
     
@@ -78,6 +90,8 @@
 //    _imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
     [super viewWillAppear:animated];
     
+    
+    
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
@@ -91,8 +105,11 @@
         }
     }];
     
+    if (!self.image && !self.videoFilePath) {
+        
+        [self.tabBarController presentViewController:self.imagePicker animated:YES completion:nil];
+    }
     
-    [self presentViewController:self.imagePicker animated:YES completion:nil];
 }
 
 
@@ -117,9 +134,43 @@
     PFUser *user = [self.friends objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
     
+    if ([self.recipients containsObject:user.objectId]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
+
+#pragma mark - Table view delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+    
+    if (![self.recipients containsObject:user.objectId]) {
+        [self.recipients addObject:user.objectId];
+        
+    }
+    else {
+        [self.recipients removeObject:user.objectId];
+    }
+    
+    [tableView reloadData];
+    
+    
+    
+   // NSLog(@"%@", self.recipients);
+    
+    
+    
+}
 
 
 #pragma mark - Image Picker Controller Delegate
@@ -142,10 +193,10 @@
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         // A photo was taken or selected
         self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-        if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        //if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
             UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
             
-        }
+        //}
         
         
     }
@@ -168,10 +219,11 @@
         
     }
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 
     
 }
+
 
 
 @end

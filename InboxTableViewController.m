@@ -42,6 +42,9 @@
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
+    [self.tabBarController.viewControllers[1] popToRootViewControllerAnimated:YES];
+    
+    
     [self performSegueWithIdentifier:@"showLogin" sender:self];
     
 }
